@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seris | Nguyen Ngoc Quynh Portfolio</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#experience">Experience</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <div class="mobile-menu-toggle" id="mobileMenuToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+
+    <nav class="mobile-menu" id="mobileMenu">
+        <a href="#about" class="mobile-menu-link">About</a>
+        <a href="#skills" class="mobile-menu-link">Skills</a>
+        <a href="#experience" class="mobile-menu-link">Experience</a>
+        <a href="#projects" class="mobile-menu-link">Projects</a>
+        <a href="#contact" class="mobile-menu-link">Contact</a>
+    </nav>
+
+    <header id="home" class="hero">
+        <div class="container hero-layout">
+            <div class="hero-image reveal">
+                <div class="image-arch">
+                    <img src="images/avatar.jpg" alt="Seris" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1000&auto=format&fit=crop'">
+                </div>
+            </div>
+
+            <div class="hero-text reveal">
+                <p class="greeting">Hello, I am <span class="highlight-name">Seris</span></p>
+                <h1 class="name">Nguyen Ngoc Quynh</h1>
+                <p class="role">Data Science Student <span class="divider">|</span> Creative Thinker</p>
+                
+                <div class="bio-line"></div>
+                
+                <p class="bio">
+                    An ambitious student aiming to build a career that bridges <strong>Technology, Economics, and Law</strong>. 
+                    I strive to use data-driven insights to empower ethical decisions and sustainable development.
+                </p>
+
+                <div class="hero-socials">
+                    <a href="mailto:serisnguyen@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+                    <a href="https://github.com/serisnguyen" title="GitHub" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://www.facebook.com/nguyen.ngoc.quynh.34401/" title="Facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/qvnx._" title="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/ngoc-quynh-nguyen-0b3a53388/" title="LinkedIn" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="about" class="section about-section">
+        <div class="container">
+            <h2 class="section-title reveal">About Me</h2>
+            <div class="about-grid reveal">
+                <div class="about-card">
+                    <div class="about-icon"><i class="fas fa-user-graduate"></i></div>
+                    <h3>Who I Am</h3>
+                    <p>I'm a passionate <span class="highlight-text">Data Science student</span> at UIT. My journey blends <strong>technology, economics, and law</strong> to solve real-world problems.</p>
+                </div>
+                <div class="about-card">
+                    <div class="about-icon"><i class="fas fa-laptop-code"></i></div>
+                    <h3>What I Do</h3>
+                    <p>I specialize in <span class="highlight-text">data analysis</span>, ML, and strategy. Beyond code, I dive deep into <strong>content creation</strong> and leadership.</p>
+                </div>
+                <div class="about-card">
+                    <div class="about-icon"><i class="fas fa-rocket"></i></div>
+                    <h3>My Mission</h3>
+                    <p>Bridging <span class="highlight-text">tech & impact</span>. I use data insights to empower <strong>ethical decision-making</strong> and sustainable development.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="section">
+        <div class="container">
+            <h2 class="section-title reveal">My Expertise</h2>
+            <div class="skills-layout">
+                
+                <div class="skill-col reveal">
+                    <h3 class="col-header"><i class="fas fa-graduation-cap"></i> Education</h3>
+                    <div class="edu-card">
+                        <div class="edu-icon"><i class="fas fa-university"></i></div>
+                        <div class="edu-info">
+                            <h4>University of Information Technology</h4>
+                            <p class="edu-sub">VNU-HCM</p>
+                            <div class="edu-divider"></div>
+                            <p class="edu-major"><strong>Major:</strong> Data Science</p>
+                            <p class="edu-year"><i class="far fa-calendar-alt"></i> 2025 - Present</p>
+                        </div>
+                        <div class="edu-bg-icon"><i class="fas fa-graduation-cap"></i></div>
+                    </div>
+                </div>
+
+                <div class="skill-col reveal">
+                    <h3 class="col-header"><i class="fas fa-award"></i> Honors & Certs</h3>
+                    <div class="awards-list">
+                        <div class="award-item">
+                            <div class="award-icon"><i class="fas fa-medal"></i></div>
+                            <div class="award-content">
+                                <strong>City Level Excellence Award</strong>
+                                <span>2nd Prize - Economics & Law (2025)</span>
+                            </div>
+                        </div>
+                        <div class="award-item">
+                            <div class="award-icon"><i class="fas fa-certificate"></i></div>
+                            <div class="award-content">
+                                <strong>Academic Excellence Award</strong>
+                                <span>Outstanding Student (3 years)</span>
+                            </div>
+                        </div>
+                        <div class="award-item">
+                            <div class="award-icon"><i class="fab fa-microsoft"></i></div>
+                            <div class="award-content">
+                                <strong>MOS Specialist</strong>
+                                <span>Word & Excel Certified</span>
+                            </div>
+                        </div>
+                        <div class="award-item">
+                            <div class="award-icon"><i class="fas fa-globe"></i></div>
+                            <div class="award-content">
+                                <strong>English Proficiency</strong>
+                                <span>B2 Level (Upper Intermediate)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-col reveal">
+                    <h3 class="col-header"><i class="fas fa-layer-group"></i> Skills</h3>
+                    <div class="skill-category">
+                        <span class="cat-title">Tech Stack</span>
+                        <div class="skill-tags">
+                            <span><i class="fab fa-python"></i> Python</span>
+                            <span><i class="fas fa-code"></i> C++</span>
+                            <span><i class="fab fa-github"></i> GitHub</span>
+                            <span><i class="fas fa-database"></i> SQL</span>
+                            <span><i class="fas fa-pen-fancy"></i> Notion</span>
+                            <span><i class="fas fa-palette"></i> Canva</span>
+                            <span><i class="fas fa-video"></i> CapCut</span>
+                            <span><i class="fab fa-microsoft"></i> MS Office</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <span class="cat-title">Soft Skills</span>
+                        <div class="skill-tags soft">
+                            <span>Strategic Organization</span>
+                            <span>Critical Thinking</span>
+                            <span>Public Speaking</span>
+                            <span>Leadership</span>
+                            <span>Teamwork</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="section bg-light">
+        <div class="container">
+            <h2 class="section-title reveal">Professional Journey</h2>
+            <div class="timeline-compact">
+                
+                <div class="timeline-item reveal">
+                    <div class="time-col">
+                        <span class="time-year">2023 - 2025</span>
+                        <span class="time-place">NHHPTG Club</span>
+                    </div>
+                    <div class="content-col">
+                        <h3>Content Writer & Mentor</h3>
+                        <ul class="job-desc">
+                            <li>Authored & localized <strong>communication materials</strong> for major campaigns.</li>
+                            <li>Mentored junior members in <strong>photography & storytelling</strong> concepts.</li>
+                            <li>Created <strong>viral content series</strong> boosting Fanpage engagement significantly.</li>
+                        </ul>
+                        <div class="exp-tags">
+                            <span>Copywriting</span><span>Mentorship</span><span>Viral Content</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item reveal">
+                    <div class="time-col">
+                        <span class="time-year">2023 - 2024</span>
+                        <span class="time-place">The Actopus Club</span>
+                    </div>
+                    <div class="content-col">
+                        <h3>Head of Media</h3>
+                        <ul class="job-desc">
+                            <li>Directed media team in producing <strong>high-quality event visuals</strong>.</li>
+                            <li>Developed <strong>strategic communication plans</strong> aligning with club KPI.</li>
+                            <li>Managed cross-functional teamwork under tight deadlines.</li>
+                        </ul>
+                        <div class="exp-tags">
+                            <span>Leadership</span><span>Media Planning</span><span>Management</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item reveal">
+                    <div class="time-col">
+                        <span class="time-year">Present</span>
+                        <span class="time-place">Youth Union - ISE</span>
+                    </div>
+                    <div class="content-col">
+                        <h3>Executive Committee Member</h3>
+                        <ul class="job-desc">
+                            <li>Leading <strong>youth activities</strong> & fostering class solidarity for KHDL2025.</li>
+                            <li>Mobilizing students for <strong>large-scale faculty movements</strong> and events.</li>
+                        </ul>
+                        <div class="exp-tags">
+                            <span>Event Organizing</span><span>Public Relations</span>
+                        </div>
+                    </div>
+                </div>
+                 
+                 <div class="timeline-item reveal">
+                    <div class="time-col">
+                        <span class="time-year">Present</span>
+                        <span class="time-place">GDGoC UIT</span>
+                    </div>
+                    <div class="content-col">
+                        <h3>Operations Member & Speaker</h3>
+                        <ul class="job-desc">
+                            <li>Ensuring smooth workflow for club activities in the <strong>Operations team</strong>.</li>
+                            <li>Ideating and organizing <strong>internal bonding activities</strong> to strengthen team connection and culture.</li>
+                            <li>Selected as a <strong>Key Speaker</strong> for sharing session on "Business Analysis & BABOK".</li>
+                        </ul>
+                         <div class="exp-tags">
+                            <span>Operations</span><span>Team Bonding</span><span>Public Speaking</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="section">
+        <div class="container">
+            <h2 class="section-title reveal">Featured Projects</h2>
+            <div class="projects-list">
+                
+                <div class="project-row reveal">
+                    <div class="row-image">
+                        <img src="images/project1.PNG" alt="TruthShield AI" style="object-position: center;">
+                    </div>
+                    <div class="row-content">
+                        <div class="row-header-new">
+                            <h3 class="row-title">TruthShield AI</h3>
+                            <div class="row-meta">
+                                <span class="badge">Spark IT Up 2025 Finalist</span>
+                                <span class="tag">AI/ML</span><span class="tag">Startup</span>
+                            </div>
+                        </div>
+                        <div class="project-grid-info">
+                            <div class="info-box">
+                                <i class="fas fa-bolt"></i>
+                                <div><strong>Challenge</strong><p>Deepfake & Voice scams</p></div>
+                            </div>
+                            <div class="info-box">
+                                <i class="fas fa-brain"></i>
+                                <div><strong>Solution</strong><p>AI Detection System</p></div>
+                            </div>
+                            <div class="info-box">
+                                <i class="fas fa-user-tie"></i>
+                                <div><strong>My Role</strong><p>Team Leader & Pitching</p></div>
+                            </div>
+                            <div class="info-box highlight">
+                                <i class="fas fa-trophy"></i>
+                                <div><strong>Impact</strong><p>Top 20 Finalist (20/49)</p></div>
+                            </div>
+                        </div>
+                        
+                        <p class="project-summary">
+                            Developed an AI-powered system to identify synthetic media. 
+                            Out of 49 participating teams, we were selected as one of the <strong>Top 20 Finalists</strong> to compete in the intensive Hackathon and Final Round.
+                        </p>
+                        
+                        <a href="https://github.com/serisnguyen/BeOnTop.git" class="btn-view" target="_blank">
+                            View Github <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-row reveal">
+                    <div class="row-image">
+                        <img src="images/project2.JPG" alt="The Eutopia" style="object-position: center;">
+                    </div>
+                    <div class="row-content">
+                        <div class="row-header-new">
+                            <h3 class="row-title">The Eutopia</h3>
+                            <div class="row-meta">
+                                <span class="badge">Brand Identity 2023</span>
+                                <span class="tag">Design</span><span class="tag">Management</span>
+                            </div>
+                        </div>
+                        <div class="project-grid-info">
+                            <div class="info-box">
+                                <i class="fas fa-pen-nib"></i>
+                                <div><strong>Focus</strong><p>Publications & Brand</p></div>
+                            </div>
+                            <div class="info-box">
+                                <i class="fas fa-users-cog"></i>
+                                <div><strong>My Role</strong><p>Design Team Leader</p></div>
+                            </div>
+                            <div class="info-box highlight">
+                                <i class="fas fa-hourglass-half"></i>
+                                <div><strong>Responsibility</strong><p>Progress & Deadline</p></div>
+                            </div>
+                        </div>
+                        
+                        <p class="project-summary">
+                            Led the design team in creating visual assets and key publications. 
+                            Beyond <strong>hands-on designing</strong>, I managed the team's workflow, monitored progress daily, and urged members to ensure strict adherence to deadlines.
+                        </p>
+                        
+                        <a href="https://www.facebook.com/theeutopia.project" class="btn-view" target="_blank">
+                            View Facebook <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-row reveal">
+                    <div class="row-image">
+                        <img src="images/project3.JPG" alt="Song Quang" style="object-position: top;">
+                    </div>
+                    <div class="row-content">
+                        <div class="row-header-new">
+                            <h3 class="row-title">Song Quang</h3>
+                            <div class="row-meta">
+                                <span class="badge">Photography Contest</span>
+                                <span class="tag">Art</span><span class="tag">Culture</span>
+                            </div>
+                        </div>
+                        <div class="project-grid-info">
+                            <div class="info-box">
+                                <i class="fas fa-camera-retro"></i>
+                                <div><strong>Concept</strong><p>Modern vs Traditional</p></div>
+                            </div>
+                            <div class="info-box">
+                                <i class="fas fa-pen-fancy"></i>
+                                <div><strong>My Role</strong><p>Content Mentor</p></div>
+                            </div>
+                            <div class="info-box highlight">
+                                <i class="fas fa-users"></i>
+                                <div><strong>Support</strong><p>Huỳnh Long Troupe</p></div>
+                            </div>
+                        </div>
+                        
+                        <p class="project-summary">
+                            A visual journey capturing the "dual aura" of dynamic youth and timeless 'Cải lương' art. 
+                            As a <strong>Content Mentor</strong>, I guided the team in refining captions and storytelling, ensuring every post conveyed the right message and emotion before publication.
+                        </p>
+                        
+                        <a href="https://www.behance.net/gallery/231503645/SONG-QUANG" class="btn-view" target="_blank">
+                            View on Behance <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact" class="footer">
+        <div class="container">
+            <div class="contact-card reveal">
+                <h2 class="contact-title">Let's Work Together</h2>
+                <p class="contact-text">Open for internships, collaborations, and meaningful conversations about Data Science, Law, and Technology.</p>
+                
+                <a href="mailto:serisnguyen@gmail.com" class="cta-button">
+                    <i class="fas fa-envelope"></i> serisnguyen@gmail.com
+                </a>
+
+                <div class="social-links">
+                    <a href="https://github.com/serisnguyen" target="_blank" class="social-btn" title="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://www.facebook.com/nguyen.ngoc.quynh.34401/" target="_blank" class="social-btn" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/qvnx._" target="_blank" class="social-btn" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/ngoc-quynh-nguyen-0b3a53388/" target="_blank" class="social-btn" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>© 2025 Seris. Designed with elegance.</p>
+            </div>
+        </div>
+    </footer>
+
+    <a href="#" id="backToTop" class="back-to-top" title="Back to Top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <script src="script.js"></script>
+</body>
+</html>
