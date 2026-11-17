@@ -43,7 +43,17 @@ let nextMusicTime = 0;
 let musicIndex = 0;
 let musicGeneration = 0;
 let renderedCount = 0;
-const hasMusic = Boolean(GIFT.music.src || GIFT.music.generated);
+const backgroundTracks = [GIFT.music.src, GIFT.music.nextSrc].map(source).filter(Boolean);
+let backgroundTrack = 0;
+const hasMusic = Boolean(backgroundTracks.length || GIFT.music.generated);
+
+background.loop = backgroundTracks.length === 1;
+background.addEventListener("ended", () => {
+  if (backgroundTracks.length < 2) return;
+  backgroundTrack = (backgroundTrack + 1) % backgroundTracks.length;
+  background.src = backgroundTracks[backgroundTrack];
+  levelMusic(!voice.paused);
+});
 const isReduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 const save = () => {
@@ -340,23 +350,22 @@ function stopMusic() {
 function levelMusic(duck) {
   const volume = soundEnabled && state.music ? state.volume / 100 : 0;
   if (musicGain && context) musicGain.gain.setTargetAtTime(duck ? volume * 0.27 : volume, context.currentTime, 0.16);
-  if (GIFT.music.src && soundEnabled && state.music) {
-    if (duck) background.pause();
-    else if (volume > 0) background.play().catch(() => {});
-  }
   background.volume = volume;
+  if (!backgroundTracks.length || !background.getAttribute("src")) return;
+  if (duck || volume <= 0) {
+    background.pause();
+  } else if (background.paused) {
+    background.play().catch(() => announce("Chưa bật được nhạc nền. HC thử bật lại trong mục Âm thanh nha."));
+  }
 }
 async function startMusic() {
   if (!hasMusic || !state.music) return;
   soundEnabled = true;
   const run = ++musicGeneration;
-  const src = source(GIFT.music.src);
+  const src = backgroundTracks[backgroundTrack];
   if (src) {
     if (background.src !== src) background.src = src;
     levelMusic(!voice.paused);
-    if (voice.paused && state.volume > 0) {
-      try { await background.play(); } catch { announce("Chưa bật được nhạc nền."); }
-    }
   } else if (GIFT.music.generated) {
     try {
       const AudioContext = window.AudioContext || window.webkitAudioContext;
@@ -406,11 +415,11 @@ dialog.addEventListener("close", () => {
 });
 
 function showSound() {
-  if (!GIFT.music.src && GIFT.youtubeMusic?.length) {
+  if (!backgroundTracks.length && GIFT.youtubeMusic?.length) {
     showYouTubeMusic();
     return;
   }
-  openDialog("Âm thanh", `<p>${GIFT.music.src ? "Nhạc nền của Quỳnh" : GIFT.music.generated ? "Nhạc hộp nhạc" : "Chưa có nguồn nhạc nền"}</p><label class="range-label" for="music-volume">Âm lượng nhạc nền <output id="volume-text">${state.volume}%</output></label><input id="music-volume" type="range" min="0" max="100" value="${state.volume}" ${hasMusic ? "" : "disabled"}><div class="dialog-actions">${action(soundEnabled && state.music ? "Tắt nhạc" : "Bật nhạc", "toggle-music", hasMusic ? "" : "disabled")}${!voice.paused ? action("Tạm dừng bản thu", "pause-voice") : ""}</div>`);
+  openDialog("Âm thanh", `<p>${backgroundTracks.length ? "Nhạc nền của Quỳnh" : GIFT.music.generated ? "Nhạc hộp nhạc" : "Chưa có nguồn nhạc nền"}</p><label class="range-label" for="music-volume">Âm lượng nhạc nền <output id="volume-text">${state.volume}%</output></label><input id="music-volume" type="range" min="0" max="100" value="${state.volume}" ${hasMusic ? "" : "disabled"}><div class="dialog-actions">${action(soundEnabled && state.music ? "Tắt nhạc" : "Bật nhạc", "toggle-music", hasMusic ? "" : "disabled")}${!voice.paused ? action("Tạm dừng bản thu", "pause-voice") : ""}</div>`);
 }
 
 const flowerColors = ["#d88a90", "#efb980", "#d7a6b4", "#e3c271", "#b299b1"];
