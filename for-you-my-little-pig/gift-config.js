@@ -1,7 +1,7 @@
 // Thay src bằng đường dẫn tương đối (assets/ten-file.jpg) hoặc URL HTTPS.
 const GIFT = {
   recipient: "Huy Cường",
-  typography: { heading: "storybook", body: "sans", letter: "serif", letterSize: 20 },
+  typography: { heading: "sans", body: "sans", letter: "sans", letterSize: 18 },
   mainLetter: { title: "Một lá thư dài cho HC", text: "", src: "", voice: { id: "VOICE_LETTER", src: "", link: "" } },
   sender: "Nguyễn Ngọc Quỳnh",
   startDate: "2026-07-30",

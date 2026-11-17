@@ -9,9 +9,9 @@ const LETTER_SIZES = [17, 18, 20, 22, 24, 26];
 
 function applyGiftFonts(settings, root) {
   for (const [property, key, fallback] of [
-    ["--serif", "heading", "storybook"],
+    ["--serif", "heading", "sans"],
     ["--body", "body", "sans"],
-    ["--letter-font", "letter", "serif"],
+    ["--letter-font", "letter", "sans"],
   ]) {
     root.style.setProperty(property, (GIFT_FONTS[settings[key]] || GIFT_FONTS[fallback]).stack);
   }
