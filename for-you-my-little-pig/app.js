@@ -379,7 +379,37 @@ async function startMusic() {
   }
   syncAudio();
 }
+let youtubeTrack = 0;
+
+function showYouTubeMusic() {
+  const tracks = GIFT.youtubeMusic;
+  const track = tracks[youtubeTrack];
+  const choices = tracks.map((song, index) => `
+    <button class="button ${index === youtubeTrack ? "" : "secondary"}" data-action="youtube-track"
+      data-index="${index}" aria-pressed="${index === youtubeTrack}">${escape(song.title)}</button>
+  `).join("");
+  openDialog("Âm thanh", `
+    <div class="dialog-actions" role="group" aria-label="Chọn bài hát">${choices}</div>
+    <p style="margin:1rem 0 .5rem"><strong>${escape(track.title)}</strong> · ${escape(track.artist)}</p>
+    <iframe id="youtube-music-player" title="YouTube · ${escape(track.title)}"
+      src="https://www.youtube.com/embed/${encodeURIComponent(track.id)}?playsinline=1"
+      style="display:block;width:100%;min-height:200px;aspect-ratio:16/9;border:0;border-radius:10px"
+      referrerpolicy="strict-origin-when-cross-origin"
+      allow="encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>
+    <a class="text-link" href="https://www.youtube.com/watch?v=${encodeURIComponent(track.id)}"
+      target="_blank" rel="noopener noreferrer">Mở trên YouTube ↗</a>
+  `);
+}
+
+dialog.addEventListener("close", () => {
+  if (!dialog.open) get("youtube-music-player")?.remove();
+});
+
 function showSound() {
+  if (!GIFT.music.src && GIFT.youtubeMusic?.length) {
+    showYouTubeMusic();
+    return;
+  }
   openDialog("Âm thanh", `<p>${GIFT.music.src ? "Nhạc nền của Quỳnh" : GIFT.music.generated ? "Nhạc hộp nhạc" : "Chưa có nguồn nhạc nền"}</p><label class="range-label" for="music-volume">Âm lượng nhạc nền <output id="volume-text">${state.volume}%</output></label><input id="music-volume" type="range" min="0" max="100" value="${state.volume}" ${hasMusic ? "" : "disabled"}><div class="dialog-actions">${action(soundEnabled && state.music ? "Tắt nhạc" : "Bật nhạc", "toggle-music", hasMusic ? "" : "disabled")}${!voice.paused ? action("Tạm dừng bản thu", "pause-voice") : ""}</div>`);
 }
 
@@ -620,6 +650,12 @@ const handlers = {
   },
   "play-track": (data, _, button) => { if (scene === "radio") stamp("radio"); playTrack(button.closest(".audio-control").dataset); },
   sound: showSound,
+  "youtube-track": (_, index) => {
+    if (!GIFT.youtubeMusic[index] || youtubeTrack === index) return;
+    youtubeTrack = index;
+    showYouTubeMusic();
+    dialog.querySelector('[aria-pressed="true"]')?.focus();
+  },
   "toggle-music": () => {
     state.music = !(soundEnabled && state.music);
     save();

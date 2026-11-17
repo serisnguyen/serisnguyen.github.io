@@ -10,7 +10,11 @@ const GIFT = {
   opening: "Helooo chú heo con, hôm nay có một thế giới nhỏ được tạo ra chỉ dành riêng cho HC thui. Nhớ đeo tai nghe nha, vì có một vài điều tui muốn tự mình nói cho HC nghe.",
   photos: [],
   voices: [],
-  music: { src: "", volume: 10, generated: true },
+  music: { src: "", volume: 10, generated: false },
+  youtubeMusic: [
+    { id: "_YzngEllRgM", title: "Có Em Chờ", artist: "MIN ft. Mr A" },
+    { id: "t9suPxglykA", title: "Từ thích thích thành thương thương", artist: "AMEE & Hoàng Dũng" },
+  ],
   finaleVoice: { id: "VOICE_FINAL", title: "Điều cuối cùng tui muốn nói", src: "", link: "" },
   house: {
     gift: "nếu hôm nay HC chưa được ai khen thì để tui khen trước nha, chú heo con của tui tiệt dờii",
