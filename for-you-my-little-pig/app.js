@@ -782,6 +782,11 @@ document.addEventListener("click", (event) => {
   const control = event.target.closest("button[data-action], button[data-go]");
   if (!control) return;
   const data = control.dataset;
+  if (state.intro && !soundEnabled && state.music && backgroundTracks.length &&
+      (scene !== "intro" || data.go === "map") &&
+      !["sound", "toggle-music", "play-track", "final-voice", "begin"].includes(data.action)) {
+    startMusic();
+  }
   if (data.go) go(data.go);
   else handlers[data.action]?.(data, Number(data.index), control);
 });

@@ -8,5 +8,11 @@ globalThis.GIFT_CUSTOM = {
       "src": "",
       "link": ""
     }
+  },
+  "music": {
+    "src": "assets/background-music-a316cfce-a99.m4a",
+    "nextSrc": "assets/background-music-2-f49c5ee9-d7e.m4a",
+    "volume": 10,
+    "generated": false
   }
 };
